@@ -15,8 +15,8 @@ document.body.append(canvas);
 let backgroundImage,bulletImage,characterImage,gameOverImage,enemyImage;
 
 // 캐릭터 좌표
-let charX;
-let charY;
+let charX = (canvas.width / 2) - 32;
+let charY = canvas.height - 64;
 
 function loadImage() {
 	backgroundImage = new Image();
@@ -37,6 +37,7 @@ function loadImage() {
 
 function render() {
 	ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+	ctx.drawImage(characterImage, charX, charY);
 }
 
 function main() {
