@@ -43,7 +43,21 @@ function render() {
 function main() {
 
 	render();
+	setupKeyboardListener();
 	requestAnimationFrame(main);
+}
+
+function setupKeyboardListener() {
+	document.addEventListener("keydown", (event) => {
+		console.log("이러한 키다", event.keyCode);
+		console.log("x의 좌표", charX)
+		if (event.keyCode === 37 && charX >= 0){
+			charX -= .05;
+		}
+		else if (event.keyCode === 39 && charX <= 350) {
+			charX += .05;
+		}
+	});
 }
 
 
