@@ -65,7 +65,10 @@ function update() {
 	if ( 37 in keyDown && charX >= 0){
 		charX -= 5;
 	}
-	else if ( 39 in keyDown && charX <= 350) {
+	else if ( charX >= canvas.width - 64){
+		charX = canvas.width - 64
+	}
+	else if ( 39 in keyDown ) {
 		charX += 5;
 	}
 }
