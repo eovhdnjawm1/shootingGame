@@ -62,13 +62,17 @@ function setupKeyboardListener() {
 
 
 function update() {
-	if ( 37 in keyDown && charX >= 0){
+	console.log("charX", charX)
+	if ( 37 in keyDown ){
 		charX -= 5;
 	}
-	else if ( charX >= canvas.width - 64){
+	if (charX <= 0){
+		charX = 0;
+	}
+	if ( charX >= canvas.width - 64){
 		charX = canvas.width - 64
 	}
-	else if ( 39 in keyDown ) {
+	if ( 39 in keyDown ) {
 		charX += 5;
 	}
 }
